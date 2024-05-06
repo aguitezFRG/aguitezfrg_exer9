@@ -191,7 +191,12 @@ code {
   align-items: center;
   text-align: left;
 
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+.cart_item.hovered{
+  background-color: #FF6663;
+  color: white;
 }
 
 #cart_item_name {
