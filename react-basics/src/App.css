@@ -60,10 +60,16 @@ code {
   color: #3D3A4B;
 }
 
+.App_body {
+  display: flex;
+  flex-direction: row;
+}
+
 /* item container formatting*/ 
 .items {
   display: flex;
   flex-wrap: wrap;
+  flex: 0.9;
   /* fills out the row before moving to the next line/space below, minimum width of 300px, and a maximum of one fraction share of free space */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   column-gap: 10px;
@@ -145,6 +151,11 @@ code {
   background-color: white; 
   color: black; 
   border: 2px solid #FF6663;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
 }
 
 /* name and price formatting */
