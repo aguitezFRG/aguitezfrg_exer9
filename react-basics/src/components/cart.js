@@ -4,6 +4,12 @@ const cart_items = [
         name: 'Earphones',
         quantity: 2,
         price: 199
+    },
+    {
+        id: 2,
+        name: 'iPhone',
+        quantity: 2,
+        price: 749
     }
 
 ]
