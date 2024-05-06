@@ -188,6 +188,7 @@ code {
   
   width: 100%;
   padding: 10px;
+  border-bottom: 1px solid #3D3A4B;
   
   align-items: center;
   text-align: left;
@@ -199,6 +200,11 @@ code {
 .cart_item.hovered{
   background-color: #FF6663;
   color: white;
+}
+
+/* stylizing the trash icon for remove */
+svg {
+  height: 25px;
 }
 
 /* name and price formatting */

@@ -31,7 +31,9 @@ export default function ItemList(props) {
                 <div className="item_details">
                     {/* order is reversed */}
                     {/* adds a button to the bottom part of the item details  */}
-                    <button className="addtocart" onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                    <button className="addtocart" onClick={() => handleAddToCart(item)}>
+                        Add to Cart
+                    </button>
                     <p id="item_price">${item.price}</p>
                     <p id="item_name">{item.name}</p>
                     <img className="item_img" src={item.image} alt={item.name}/>
