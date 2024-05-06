@@ -37,18 +37,16 @@ function App() {
         </div>
         <div className="cart">
           <div className="cart_header">
-            <p className="cart_title">Shopping Cart</p>
-            <p className="num_items">{cart.length}</p>
+            <p id="cart_title">Shopping Cart</p>
+            <p id="num_items">Item Count: {cart.length}</p>
           </div>
           <div className="cart_items">
             {cart.map(cart_item => (
               <div key = {cart_item.id} className="cart_item">
-                <div className="cart_item_details">
-                    <div id="cart_item_name">{cart_item.name}</div>
-                    <div id="cart_item_quantity">{cart_item.quantity}</div>
-                    <div id="cart_item_price">{computeTotal(cart_item)}</div>
-                    <button className="removeItem">Remove</button>
-                </div>
+                  <button className="removeItem">Remove</button>
+                  <div id="cart_item_price">${computeTotal(cart_item)}</div>
+                  <div id="cart_item_quantity">QTY: {cart_item.quantity}</div>
+                  <div id="cart_item_name">{cart_item.name}</div>
               </div>
             ))}
           </div>
@@ -67,5 +65,16 @@ function computeTotal(item) {
   var total = item.quantity * item.price;
   return total;
 }
+
+document.querySelectorAll('.removeItem').forEach((button) => {
+  button.addEventListener('mouseover', function() {
+    this.parentNode.style.backgroundColor = '#FF6663'; // replace 'color' with your desired color
+    this.parentNode.style.color = 'white';
+  });
+  button.addEventListener('mouseout', function() {
+    this.parentNode.style.backgroundColor = ''; // resets the color when the mouse is no longer hovering over the button
+    this.parentNode.style.color = '';
+  });
+});
 
 export default App;
