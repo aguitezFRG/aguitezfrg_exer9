@@ -1,4 +1,5 @@
 import {useState} from "react"; // for use state
+import { Trash3Fill } from 'react-bootstrap-icons';
 
 export default function CartList(props) {
     const cart = props.list;    // extracts the cart array 
@@ -43,7 +44,7 @@ export default function CartList(props) {
                                 onClick={() => handleRemoveItem(cart_item)} 
                                 onMouseEnter={() => setIsHovered(cart_item.id)} 
                                 onMouseLeave={() => setIsHovered(null)}>
-                                    Remove
+                                    <Trash3Fill />
                             </button>
                             <div id="cart_item_price">${computeTotal(cart_item)}</div>
                             <div id="cart_item_quantity">QTY: {cart_item.quantity}</div>
