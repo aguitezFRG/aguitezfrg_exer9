@@ -1,0 +1,165 @@
+/* font formatting */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  
+  /* makes the font appearance smoother */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+/* main container */
+.App {
+  display: flex;
+  flex-direction: column; /* elements are to be placed by row*/
+}
+
+.topnav {
+  display: flex;
+  flex-direction: row;  /* elements are to be placed in columns */
+  background-color: #eeba0b;
+  height: 100px; /* sets height to a fixed 100px value*/
+}
+
+/* title formatting */
+.Lazado {
+  display: flex;
+  align-items: center;
+  flex: 0.5; /* takes half the space allotted by the parent container*/
+
+  margin-left: 10vw;
+
+  text-align: left;
+  color: #3D3A4B;
+  font-size: 45px;
+}
+
+/* menu elements */
+.select {
+  flex: 0.5;
+  display: flex;
+  margin-left: 0px;
+  margin-right: 5vw;
+  
+  justify-content: flex-end; /* contents, as a whole, are aligned to the right */
+  color: #3D3A4B;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.select h3 a, .select h3 {
+  display: flex;
+  padding-inline: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: #3D3A4B;
+}
+
+/* item container formatting*/ 
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  /* fills out the row before moving to the next line/space below, minimum width of 300px, and a maximum of one fraction share of free space */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 10px;
+  justify-content: center;
+  background-color: #E3DFFF;
+}
+
+/* item formatting */
+.item {
+  display: flex;
+  flex-direction: column; /* item elements occupy one row each*/
+  align-items: center; /* align elements to center*/
+  margin: 10px;
+  padding: 10px;
+  
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.258);
+
+  width: 200px;
+}
+
+/* detail formatting */
+.item_details {
+  display: flex; 
+  flex-direction: column-reverse; /* reverses the order in which the details are shown*/
+  width: 100%;
+}
+
+/* item image formatting */
+.item_img {
+  width: 180px;
+  height: 200px;
+  object-fit: contain;
+  color: #EEBA0B;
+  border-radius: 5px;
+  align-self: center;
+  position:sticky;
+
+  /* on hover */
+  transition-duration: 0.35s;
+  cursor: pointer;
+}
+
+/* changing the image attributes when hovered on */
+.item_img:hover {
+  transform: scale(1.25);
+  opacity: 90%;
+  margin-bottom: 20px;
+}
+
+.addtocart:hover ~ .item_img {
+  transform: scale(1.15);
+  box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* button formatting */
+.addtocart {
+  margin: 5px;
+  height: 33px;
+  width: 100px;
+  align-self: center;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #FF6663;
+  color: white;
+  
+  text-decoration: none;
+  font-size: 14px;
+
+  /* on hover */
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+.addtocart:hover {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #FF6663;
+}
+
+/* name and price formatting */
+#item_name, #item_price {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+#item_name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#item_price {
+  font-size: 18px;
+  font-style: oblique;
+}
