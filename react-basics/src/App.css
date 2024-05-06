@@ -154,6 +154,7 @@ code {
   border: 2px solid #FF6663;
 }
 
+/* add to cart section formatting */
 .cart {
   display: flex;
   flex-direction: column;
@@ -191,27 +192,13 @@ code {
   align-items: center;
   text-align: left;
 
+  /* transition for hovered event */
   transition: background-color 0.45s ease, color 0.45s ease;
 }
 
 .cart_item.hovered{
   background-color: #FF6663;
   color: white;
-}
-
-#cart_item_name {
-  flex: 1;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-#cart_item_quantity, #cart_item_price {
-  font-style: italic;
-  font-size: 15px;
-}
-
-#cart_item_quantity, #cart_item_price, .removeItem {
-  flex: 0.6;
 }
 
 /* name and price formatting */
@@ -231,6 +218,7 @@ code {
   font-style: oblique;
 }
 
+/* shopping cart elements formatting */
 #cart_title {
   font-size: 20px;
   font-weight: bold;
@@ -242,4 +230,22 @@ code {
   padding-right: 10px;
 }
 
+#cart_item_name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 18px;
+}
 
+#emptyCart {
+  margin-top: 2vh;
+  font-size: 30px;
+}
+
+#cart_item_quantity, #cart_item_price {
+  font-style: italic;
+  font-size: 15px;
+}
+
+#cart_item_quantity, #cart_item_price, .removeItem {
+  flex: 0.6;
+}

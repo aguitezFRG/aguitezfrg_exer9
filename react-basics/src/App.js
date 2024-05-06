@@ -18,6 +18,7 @@ function App() {
         <Menu list={menus} />
       </div>
       <div className="App_body">
+        {/* passing the setCart for updating the cart elements, as well as the cart itself */}
         <Item list={items} setCart={setCart} cart={cart}/>
         <Cart list={cart} setCart={setCart}  cart={cart}/>
       </div>
@@ -25,6 +26,7 @@ function App() {
   );
 }
 
+// initialization of the arrays
 const menus = [
   { name: "Appliances", url: "#appliance", id: 1},
   { name: "Groceries", url: "#grocery", id: 2},
