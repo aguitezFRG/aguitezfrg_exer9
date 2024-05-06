@@ -1,8 +1,14 @@
-const menus = [
-    { name: "Appliances", url: "#appliance", id: 1},
-    { name: "Groceries", url: "#grocery", id: 2},
-    { name: "Gadgets", url: "#gadget", id: 3}
-];
+export default function Menus(props){
+    const menus = props.list;
 
-export default menus;
+    return (
+        <div className="select">
+          {menus.map(menu => ( // mapping elements of the menus array
+            <h3 key={menu.id} id={menu.name.toLowerCase()}> 
+              {menu.name}
+            </h3>
+          ))}
+        </div>
+    )
+};
     
