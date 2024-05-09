@@ -14,21 +14,29 @@ export default function CartList(props) {
         props.setCart((curr_cart) => {
             // retains only the cart items apart from the removed one
             const new_cart = curr_cart.filter((cart_item) => cart_item.id !== item.id)   
-        console.log("Successfully removed " + item.name + " from the cart");
+            console.log("Successfully removed " + item.name + " from the cart");
 
-        if(isHovered === item.id) { // resets isHovered attribute of items that got removed
-            setIsHovered(null);
-        };
+            if(isHovered === item.id) { // resets isHovered attribute of items that got removed
+                setIsHovered(null);
+            };
 
-        return new_cart;
-        });
+            return new_cart;
+            });
     };
+
+    const totalCount = (cart) => {  //  function that tallies the total number of items
+        var total = 0
+        cart.forEach(cart_item => {
+            total += cart_item.quantity
+        });
+        return total;
+    }
 
     return (
         <div className="cart">
             <div className="cart_header">
                 <p id="cart_title">Shopping Cart</p>
-                <p id="num_items">Item Count: {cart.length}</p>
+                <p id="num_items">Item Count: {totalCount(cart)}</p>
             </div>
             {cart.length === 0 ? (
                 <div id="emptyCart">
