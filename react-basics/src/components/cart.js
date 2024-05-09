@@ -70,7 +70,7 @@ export default function CartList(props) {
                         ))}
                     </div>
                     <div className="totalPrice">
-                        <div id="totalPrice_title">Total Price: </div>
+                        <div id="totalPrice_title">Total Price:</div>
                         <div id="totalPrice_val">${tallyTotal(cart)}</div>
                     </div>
                 </div>

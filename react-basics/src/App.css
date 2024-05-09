@@ -172,7 +172,10 @@ code {
   background-color: #3D3A4B;
   color: #E3DFFF;
   justify-content: space-between;
+}
 
+.cart_body {
+  width: 100%;
 }
 
 .cart_items {
@@ -200,6 +203,13 @@ code {
 .cart_item.hovered{
   background-color: #FF6663;
   color: white;
+}
+
+.totalPrice{
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* stylizing the trash icon for remove */
@@ -250,6 +260,18 @@ svg {
 #cart_item_quantity, #cart_item_price {
   font-style: italic;
   font-size: 15px;
+}
+
+#totalPrice_title {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+#totalPrice_val {
+  font-style: oblique;
+  font-size: 18px;
 }
 
 #cart_item_quantity, #cart_item_price, .removeItem {
