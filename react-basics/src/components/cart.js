@@ -25,11 +25,19 @@ export default function CartList(props) {
     };
 
     const totalCount = (cart) => {  //  function that tallies the total number of items
-        var total = 0
+        var total = 0;
         cart.forEach(cart_item => {
-            total += cart_item.quantity
+            total += cart_item.quantity;
         });
         return total;
+    }
+
+    const tallyTotal = (cart) => {  // function that tallies the total price to be paid
+        var totalPrice = 0;
+        cart.forEach(cart_item => {
+            totalPrice += computeTotal(cart_item);
+        });
+        return totalPrice;
     }
 
     return (
@@ -43,22 +51,28 @@ export default function CartList(props) {
                     Add items to cart
                 </div>
             ) : (
-                <div className="cart_items">
-                    {/* maps each item of the cart */}
-                    {cart.map(cart_item => (
-                        // uses conditional operator for added hover suffix class for added ux
-                        <div key={cart_item.id} className={`cart_item ${isHovered === cart_item.id ? 'hovered' : ''}`}>
-                            <button className="removeItem" 
-                                onClick={() => handleRemoveItem(cart_item)} 
-                                onMouseEnter={() => setIsHovered(cart_item.id)} 
-                                onMouseLeave={() => setIsHovered(null)}>
-                                    <Trash3Fill />
-                            </button>
-                            <div id="cart_item_price">${computeTotal(cart_item)}</div>
-                            <div id="cart_item_quantity">QTY: {cart_item.quantity}</div>
-                            <div id="cart_item_name">{cart_item.name}</div>
-                        </div>
-                    ))}
+                <div className="cart_body">
+                    <div className="cart_items">
+                        {/* maps each item of the cart */}
+                        {cart.map(cart_item => (
+                            // uses conditional operator for added hover suffix class for added ux
+                            <div key={cart_item.id} className={`cart_item ${isHovered === cart_item.id ? 'hovered' : ''}`}>
+                                <button className="removeItem" 
+                                    onClick={() => handleRemoveItem(cart_item)} 
+                                    onMouseEnter={() => setIsHovered(cart_item.id)} 
+                                    onMouseLeave={() => setIsHovered(null)}>
+                                        <Trash3Fill />
+                                </button>
+                                <div id="cart_item_price">${computeTotal(cart_item)}</div>
+                                <div id="cart_item_quantity">QTY: {cart_item.quantity}</div>
+                                <div id="cart_item_name">{cart_item.name}</div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="totalPrice">
+                        <div id="totalPrice_title">Total Price: </div>
+                        <div id="totalPrice_val">${tallyTotal(cart)}</div>
+                    </div>
                 </div>
             )}
         </div>
